@@ -10,9 +10,14 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.testString}</h1>
 
-        <h1>#{testViewCdi.testString}</h1>
+        <h:form id="form">
+            <p:triStateCheckbox value="#{testView.testBoolean1}"
+                                converter="#{triStateCheckboxBooleanConverter}"
+            />
 
+
+            <p:commandButton update="form" action="#{testView.submit}" value="submit"/>
+        </h:form>
     </h:body>
 </html>
